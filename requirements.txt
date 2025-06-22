@@ -1,0 +1,16 @@
+albumentations
+grad-cam
+matplotlib
+numpy
+opencv-python
+pandas
+Pillow
+pyyaml
+scikit-image
+segmentation-models-pytorch
+torch
+torchvision
+torchstain
+torchcam
+tqdm
+wandb
