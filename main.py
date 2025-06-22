@@ -40,17 +40,17 @@ def main():
     )
 
     # Classification loaders
-    # clf_train_loader, clf_val_loader = get_mhist_loaders(cfg , task="classification")
+    clf_train_loader, clf_val_loader = get_mhist_loaders(cfg , task="classification")
 
     # Train classifier
-    # clf_model = train_classifier(clf_train_loader, clf_val_loader, cfg, device, logger)
+    clf_model = train_classifier(clf_train_loader, clf_val_loader, cfg, device, logger)
     
     # Generate pseudo-masks
-    # if cfg.get("postprocessing.enabled"):
+    if cfg.get("postprocessing.enabled"):
         # Build a dataset for CAM extraction
-        # cam_dataset, _ = get_mhist_loaders(cfg, task="all")
+        cam_dataset, _ = get_mhist_loaders(cfg, task="all")
         # Extract pseudo-masks using the trained classifier
-        # extract_pseudo_masks(clf_model, cam_dataset, cfg, device)
+        extract_pseudo_masks(clf_model, cam_dataset, cfg, device)
 
     # Segmentation loaders
     ssa_loader, hp_loader, val_loader = get_mhist_loaders(cfg, task="segmentation")
